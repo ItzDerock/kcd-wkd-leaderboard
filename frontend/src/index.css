@@ -19,6 +19,25 @@
   --surface: var(--darker);
 }
 
+#nprogress .bar {
+  background: var(--primary-trans) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--primary-trans), 0 0 5px var(--primary-trans) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--primary-trans) !important;
+  border-left-color: var(--primary-trans) !important;
+}
+
+.icons svg, .icons i {
+  color: var(--primary-trans) !important;
+  fill: var(--primary-trans) !important;
+  stroke: var(--primary-trans) !important;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
