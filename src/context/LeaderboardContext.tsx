@@ -1,6 +1,6 @@
 import React from "react";
 
-type LeaderboardEntry = {
+export type LeaderboardEntry = {
     teamName: string
     points: number
 }

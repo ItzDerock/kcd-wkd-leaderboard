@@ -80,6 +80,14 @@ select {
   border-radius: 0.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
 .l-wrapper {
   width: 100%;
   max-width: 960px;
