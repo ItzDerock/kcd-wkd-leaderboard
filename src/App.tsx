@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LeaderboardHeader from "./components/leaderboard/Header";
+import LeaderboardContents from "./components/leaderboard/Leaderboard";
+import { useLeaderboard } from "./context/LeaderboardContext";
 
 function App() {
+  const { state } = useLeaderboard();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="l-wrapper">
+      <div className="c-header">
+        <h1>KCD Wild Kingdom Day</h1>
+      </div>
+      <div className="l-grid__item">
+        <div className="c-card">
+          <LeaderboardHeader />
+          <LeaderboardContents />
+        </div>
+      </div>
     </div>
   );
 }
