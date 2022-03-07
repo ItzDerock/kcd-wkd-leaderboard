@@ -6,8 +6,8 @@ function LeaderboardHeader() {
       <h3>Top Teams</h3>
       <div>
         Choose Event:
-        <select className="c-select">
-          <option selected>WKD 2021-2022</option>
+        <select className="c-select" defaultValue="WKD 2021-2022">
+          <option key="2021/2">WKD 2021-2022</option>
         </select>
       </div>
     </div>

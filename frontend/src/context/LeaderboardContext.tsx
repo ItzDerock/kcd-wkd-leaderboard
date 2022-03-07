@@ -1,7 +1,7 @@
 import React from "react";
 
 export type LeaderboardEntry = {
-    teamName: string
+    name: string
     points: number
 }
 
@@ -11,7 +11,7 @@ export enum LeaderboardState {
     Error
 }
 
-interface LeaderboardContextInterface {
+export interface LeaderboardContextInterface {
     entries: LeaderboardEntry[]
     state: LeaderboardState
 }
