@@ -6,10 +6,20 @@ type LeaderboardEntryProps = LeaderboardEntry & {
 };
 
 function LeaderboardEntryComponent({ props }: { props: LeaderboardEntryProps }) {
+  const extrasPlace = props.index === 1 ? 'u-text--dark u-bg--yellow'
+    : props.index === 2 ? 'u-text--dark u-bg--teal'
+    : props.index === 3 ? 'u-text--dark u-bg--orange'
+    : '';
+
+  const extrasCudos = props.index === 1 ? 'u-text--yellow'
+    : props.index === 2 ? 'u-text--teal'
+    : props.index === 3 ? 'u-text--orange'
+    : '';
+
   return (
     <li className="c-list__item" key={props.index}>
       <div className="c-list__grid">
-        <div className="c-flag c-place u-bg--transparent">{props.index}</div>
+        <div className={"c-flag c-place u-bg--transparent " + extrasPlace}>{props.index}</div>
         <div className="c-media">
           <img
             className="c-avatar c-media__img"
@@ -27,7 +37,7 @@ function LeaderboardEntryComponent({ props }: { props: LeaderboardEntryProps }) 
             </a> */}
           </div>
         </div>
-        <div className="u-text--right c-kudos">
+        <div className={"u-text--right c-kudos " + extrasCudos}>
           <div className="u-mt--8">
             <strong>{props.points}</strong> ⭐️
           </div>
