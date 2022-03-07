@@ -38,7 +38,7 @@ function App() {
           <p className="text-center text-muted">
             Developed by <a href="https://github.com/ItzDerock">Derock</a> 
             {" "}- Template from <a href="https://codepen.io/ryanparag/pen/ZEGLqGW">Codepen</a> 
-            {" "}- <i className="fab github icons" /> View on <a href="https://github.com/ItzDerock/kcd-wkd-leaderboard">Github</a>
+            {" "}- <i className="fa-solid fa-code-branch" /> View on <a href="https://github.com/ItzDerock/kcd-wkd-leaderboard">Github</a>
           </p>
         </footer>
       </div>

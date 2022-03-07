@@ -32,11 +32,11 @@
   border-left-color: var(--primary-trans) !important;
 }
 
-.icons svg, .icons i {
+/* .icons svg, .icons i {
   color: var(--primary-trans) !important;
   fill: var(--primary-trans) !important;
   stroke: var(--primary-trans) !important;
-}
+} */
 
 html {
   font-size: 62.5%;
