@@ -38,6 +38,11 @@
   stroke: var(--primary-trans) !important;
 } */
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;

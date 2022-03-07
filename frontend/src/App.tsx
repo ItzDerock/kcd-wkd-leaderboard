@@ -9,7 +9,8 @@ function App() {
   // TODO: move to ./context/LeaderboardProvider
   const [leaderboard, setLeaderboard] = React.useState<LeaderboardContextInterface>({
     entries: [],
-    state: LeaderboardState.Loading
+    state: LeaderboardState.Loading,
+    updatedAt: undefined
   });
 
   useEffect(() => {
@@ -17,7 +18,8 @@ function App() {
       if (response.data.success) {
         setLeaderboard({
           entries: response.data.data,
-          state: LeaderboardState.Loaded
+          state: LeaderboardState.Loaded,
+          updatedAt: new Date(response.data.calculatedAt as string)
         });
       }
     });

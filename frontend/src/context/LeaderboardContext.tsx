@@ -13,12 +13,14 @@ export enum LeaderboardState {
 
 export interface LeaderboardContextInterface {
     entries: LeaderboardEntry[]
-    state: LeaderboardState
+    state: LeaderboardState,
+    updatedAt: Date | undefined | null
 }
 
 const LeaderboardContext = React.createContext<LeaderboardContextInterface>({
     entries: [],
-    state: LeaderboardState.Loading
+    state: LeaderboardState.Loading,
+    updatedAt: undefined
 });
 
 export const LeaderboardProvider = LeaderboardContext.Provider;
