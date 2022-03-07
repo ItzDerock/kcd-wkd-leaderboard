@@ -1,0 +1,22 @@
+{
+  "name": "wkd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:frontend": "cd /frontend && npm run build",
+    "build:backend": "cd /backend && npm run build",
+    "build": "npm run build:frontend && npm run build:backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzDerock/kcd-wkd-leaderboard.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItzDerock/kcd-wkd-leaderboard/issues"
+  },
+  "homepage": "https://github.com/ItzDerock/kcd-wkd-leaderboard#readme"
+}
