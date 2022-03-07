@@ -6,6 +6,7 @@ import { LeaderboardResponse } from "./api/types";
 import { LeaderboardProvider, LeaderboardState, LeaderboardContextInterface } from "./context/LeaderboardContext";
 
 function App() {
+  // TODO: move to ./context/LeaderboardProvider
   const [leaderboard, setLeaderboard] = React.useState<LeaderboardContextInterface>({
     entries: [],
     state: LeaderboardState.Loading
@@ -26,7 +27,7 @@ function App() {
     <LeaderboardProvider value={leaderboard}>
       <div className="l-wrapper">
         <div className="c-header">
-          <h1>KCD Wild Kingdom Day - Leaderboard</h1>
+          <h1>KCD Wild Kingdom Day » Leaderboard</h1>
         </div>
         <div className="l-grid__item">
           <div className="c-card">
@@ -36,9 +37,9 @@ function App() {
         </div>
         <footer>
           <p className="text-center text-muted">
-            Developed by <a href="https://github.com/ItzDerock">Derock</a> 
-            {" "}- Template from <a href="https://codepen.io/ryanparag/pen/ZEGLqGW">Codepen</a> 
-            {" "}- <i className="fa-solid fa-code-branch" /> View on <a href="https://github.com/ItzDerock/kcd-wkd-leaderboard">Github</a>
+            <i className="fa-solid fa-code" /> Developed by <a href="https://github.com/ItzDerock">Derock</a> 
+            {" "}• <i className="fa-brands fa-codepen" /> Template from <a href="https://codepen.io/ryanparag/pen/ZEGLqGW">Codepen</a> 
+            {" "}• <i className="fa-solid fa-code-branch" /> View on <a href="https://github.com/ItzDerock/kcd-wkd-leaderboard">Github</a>
           </p>
         </footer>
       </div>
