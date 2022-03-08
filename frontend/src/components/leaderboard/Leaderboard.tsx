@@ -24,7 +24,7 @@ function LeaderboardContents() {
 
         {
           leaderboard.state === LeaderboardState.Loaded ? (
-            leaderboard.entries.map((entry, index) => <LeaderboardEntry key={index} props={{ ...entry, index}} />)
+            leaderboard.entries.map((entry, index) => <LeaderboardEntry key={index} props={{ ...entry, index: index + 1 }} />)
           ) : undefined
         }
       </ul>
