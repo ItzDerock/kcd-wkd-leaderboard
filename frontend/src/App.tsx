@@ -38,7 +38,7 @@ function App() {
           </div>
         </div>
         <footer>
-          <p className="text-center text-muted">
+          <p className="text-center">
             <i className="fa-solid fa-code" /> Developed by <a href="https://github.com/ItzDerock">Derock</a> 
             {" "}• <i className="fa-brands fa-codepen" /> Template from <a href="https://codepen.io/ryanparag/pen/ZEGLqGW">Codepen</a> 
             {" "}• <i className="fa-solid fa-code-branch" /> View on <a href="https://github.com/ItzDerock/kcd-wkd-leaderboard">Github</a>

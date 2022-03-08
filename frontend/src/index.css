@@ -4,19 +4,19 @@
   --darkest: #101010;
   --darker: #16171A;
   --dark: #A3AFBF;
-  --medium: #DFE7EF;
+  --medium: #1c1d1f;
   --light: #CAD4E1;
   --lighter: #F5F8FC;
   --lightest: var(--white);
-  --primary: #7B16FF;
+  --primary: #2364a3;
   --primary-light: #DDD9FF;
   --primary-trans: #edb02e;
-  --yellow: #FDCB6E;
-  --orange: #E17055;
-  --teal: #00CEC9;
-  --bg: var(--darkest);
-  --color: var(--lightest);
-  --surface: var(--darker);
+  --yellow: #edb02e;
+  --orange: #003087;
+  --teal: #2364a3;
+  --bg: var(--primary);
+  --color: var(--darkest);
+  --surface: #f0f4f7;
 }
 
 #nprogress .bar {
@@ -67,6 +67,10 @@ body {
   font-family: 'Overpass Mono', system-ui;
 }
 
+.c-header > h1 {
+  color: var(--lighter);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   text-transform: uppercase;
@@ -74,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   font-family: 'Oswald', system-ui;
+  color: var(--darkest);
 }
 
 a {
@@ -113,6 +118,10 @@ select {
 
 .text-muted {
   color: #6c757d;
+}
+
+footer {
+  color: var(--darker);
 }
 
 .l-wrapper {
@@ -314,12 +323,13 @@ select {
      -moz-appearance: none;
           appearance: none;
   font-size: 1.4rem;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 0, 0, 0.5);
   -webkit-transition: all 120ms ease-out 0s;
   transition: all 120ms ease-out 0s;
 }
+
 .c-select:hover {
-  background: var(--darkest);
+  background: var(--lightest);
 }
 
 .c-flag {

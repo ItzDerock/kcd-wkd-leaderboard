@@ -39,7 +39,7 @@ function LeaderboardEntryComponent({ props }: { props: LeaderboardEntryProps }) 
         </div>
         <div className={"u-text--right c-kudos " + extrasCudos}>
           <div className="u-mt--8">
-            <strong>{props.points}</strong> ⭐️
+            <strong>{props.points}</strong> <i className="fa-solid fa-star" />
           </div>
         </div>
       </div>
