@@ -18,7 +18,7 @@ app.get('/api/leaderboard', async (req, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:L15");
+    await sheet.loadCells("A1:M15");
 
     const rows = await sheet.getRows();
     const teams = rows
