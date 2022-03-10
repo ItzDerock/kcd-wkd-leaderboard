@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { LeaderboardEntry } from "../../context/LeaderboardContext";
 
 type LeaderboardEntryProps = LeaderboardEntry & {
@@ -28,13 +29,9 @@ function LeaderboardEntryComponent({ props }: { props: LeaderboardEntryProps }) 
           />
           <div className="c-media__content">
             <div className="c-media__title">{props.name}</div>
-            {/* <a
-              className="c-media__link u-text--small"
-              href="${member.image}"
-              target="_blank"
-            >
-              View Image
-            </a> */}
+            <Link to={`/team/${props.name}`} className="c-media__link u-text--small">
+              View Points Breakdown
+            </Link>
           </div>
         </div>
         <div className={"u-text--right c-kudos " + extrasCudos}>

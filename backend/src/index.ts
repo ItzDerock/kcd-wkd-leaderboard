@@ -2,6 +2,7 @@ import fastify from "fastify";
 import redis from "./cache/redis";
 import config from "./config";
 import document from "./sheets";
+import { GetTeamDetails } from "./types/requests";
 export const app = fastify({
     logger: true
 });
@@ -33,6 +34,63 @@ app.get('/api/leaderboard', async (req, res) => {
     };
 
     redis.set("wkd:leaderboard", JSON.stringify(response), 'EX', 60 * 5);
+
+    res.send(response);
+});
+
+app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
+    if(req.params.teamName.length < 1)
+        return res.status(404).send({ error: "Team name not found.", success: false });
+
+    if(!document.title) return res.status(503).send({ error: "Leaderboard not yet calculated. Please try again later.", success: false });
+    const cached = await redis.get("wkd:leaderboard:" + req.params.teamName);
+    if(cached) return res.send(cached);
+
+    const sheet = document.sheetsByIndex[0];
+    await sheet.loadCells("A1:L15");
+
+    const rows = await sheet.getRows();
+    const team = rows
+        // .map(row => ({ points: row['Total:'] as number, name: row['Team'] as string }))
+        .find(team => team['Team'] === req.params.teamName);
+
+    if(team === undefined) {
+        return res.status(404).send({ error: "Team not found.", success: false });
+    }
+
+    //     Team: [Getter/Setter],
+    //   'Trivia Kahoot': [Getter/Setter],
+    //   Geoguessr: [Getter/Setter],
+    //   Wordle: [Getter/Setter],
+    //   RPS: [Getter/Setter],
+    //   'Smash Bros.': [Getter/Setter],
+    //   'Mario Kart': [Getter/Setter],
+    //   'Wii: Table Tennis': [Getter/Setter],
+    //   'Wii: Ping Pong': [Getter/Setter],
+    //   'Wii: Bowling': [Getter/Setter],
+    //   'Daily Challenges': [Getter/Setter],
+    //   'Total:': [Getter/Setter]
+
+    const response = {
+        success: true,
+        data: {
+            name: team['Team'] as string,
+            kahoot: team['Trivia Kahoot'] as string,
+            geoguessr: team['Geoguessr'] as string,
+            wordle: team['Wordle'] as string,
+            rps: team['RPS'] as string,
+            smashbros: team['Smash Bros.'] as string,
+            mariokart: team['Mario Kart'] as string,
+            wiiTableTennis: team['Wii: Table Tennis'] as string,
+            wiiPingPong: team['Wii: Ping Pong'] as string,
+            wiiBowling: team['Wii: Bowling'] as string,
+            dailyChallenges: team['Daily Challenges'] as string,
+            total: team['Total:'] as string
+        },
+        calculatedAt: new Date().toISOString()
+    };
+
+    redis.set("wkd:leaderboard:" + req.params.teamName, JSON.stringify(response), 'EX', 60 * 5);
 
     res.send(response);
 });
