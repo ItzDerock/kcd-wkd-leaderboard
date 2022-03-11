@@ -12,7 +12,8 @@ const friendlyName = {
   'wiiTableTennis': "Wii: Table Tennis",
   'wiiPingPong': "Wii: Ping Pong",
   'wiiBowling': "Wii: Bowling",
-  'dailyChallenges': "Daily Challenges"
+  'dailyChallenges': "Daily Challenges",
+  'books': "Book DDD"
 }
 
 function TeamPoints() {

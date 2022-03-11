@@ -78,6 +78,7 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
             kahoot: team['Trivia Kahoot'] as string,
             geoguessr: team['Geoguessr'] as string,
             wordle: team['Wordle'] as string,
+            books: team['Book DDD'] as string,
             rps: team['RPS'] as string,
             smashbros: team['Smash Bros.'] as string,
             mariokart: team['Mario Kart'] as string,
