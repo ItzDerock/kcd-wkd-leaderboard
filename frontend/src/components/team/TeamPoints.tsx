@@ -13,7 +13,9 @@ const friendlyName = {
   'wiiPingPong': "Wii: Ping Pong",
   'wiiBowling': "Wii: Bowling",
   'dailyChallenges': "Daily Challenges",
-  'books': "Book DDD"
+  'books': "Book DDD",
+  'womensMMBracket': "Women's MM Bracket",
+  'mensMMBracket': "Men's MM Bracket"
 }
 
 function TeamPoints() {

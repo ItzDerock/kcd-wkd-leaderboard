@@ -47,7 +47,7 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:L15");
+    await sheet.loadCells("A1:O15");
 
     const rows = await sheet.getRows();
     const team = rows
@@ -57,19 +57,6 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
     if(team === undefined) {
         return res.status(404).send({ error: "Team not found.", success: false });
     }
-
-    //     Team: [Getter/Setter],
-    //   'Trivia Kahoot': [Getter/Setter],
-    //   Geoguessr: [Getter/Setter],
-    //   Wordle: [Getter/Setter],
-    //   RPS: [Getter/Setter],
-    //   'Smash Bros.': [Getter/Setter],
-    //   'Mario Kart': [Getter/Setter],
-    //   'Wii: Table Tennis': [Getter/Setter],
-    //   'Wii: Ping Pong': [Getter/Setter],
-    //   'Wii: Bowling': [Getter/Setter],
-    //   'Daily Challenges': [Getter/Setter],
-    //   'Total:': [Getter/Setter]
 
     const response = {
         success: true,
@@ -86,6 +73,8 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
             wiiPingPong: team['Wii: Ping Pong'] as string,
             wiiBowling: team['Wii: Bowling'] as string,
             dailyChallenges: team['Daily Challenges'] as string,
+            womensMMBracket: team["Women's MM Bracket"] as string,
+            mensMMBracket: team["Men's MM Bracket"] as string,
             total: team['Total:'] as string
         },
         calculatedAt: new Date().toISOString()
