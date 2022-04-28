@@ -19,7 +19,7 @@ app.get('/api/leaderboard', async (req, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:M15");
+    await sheet.loadCells("A1:P15");
 
     const rows = await sheet.getRows();
     const teams = rows
@@ -47,11 +47,10 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:O15");
+    await sheet.loadCells("A1:P15");
 
     const rows = await sheet.getRows();
     const team = rows
-        // .map(row => ({ points: row['Total:'] as number, name: row['Team'] as string }))
         .find(team => team['Team'] === req.params.teamName);
 
     if(team === undefined) {
@@ -75,6 +74,7 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
             dailyChallenges: team['Daily Challenges'] as string,
             womensMMBracket: team["Women's MM Bracket"] as string,
             mensMMBracket: team["Men's MM Bracket"] as string,
+            dareToCare: team["Dare 2 Care Can DDD"] as string,
             total: team['Total:'] as string
         },
         calculatedAt: new Date().toISOString()

@@ -15,7 +15,8 @@ const friendlyName = {
   'dailyChallenges': "Daily Challenges",
   'books': "Book DDD",
   'womensMMBracket': "Women's MM Bracket",
-  'mensMMBracket': "Men's MM Bracket"
+  'mensMMBracket': "Men's MM Bracket",
+  'dareToCare': "Dare To Care DDD"
 }
 
 function TeamPoints() {
