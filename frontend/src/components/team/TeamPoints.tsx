@@ -16,7 +16,15 @@ const friendlyName = {
   'books': "Book DDD",
   'womensMMBracket': "Women's MM Bracket",
   'mensMMBracket': "Men's MM Bracket",
-  'dareToCare': "Dare To Care DDD"
+  'dareToCare': "Dare To Care DDD",
+
+  relayOne: "Relay 1",
+  LSHeadsTails: "LS Heads & Tails",
+  tugOfWar: "Tug of War",
+  balloonToss: "Faculty Balloon Toss",
+  relayTwo: "Relay 2",
+  limbo: "Limbo",
+  bucketBrigade: "Bucket Brigade",
 }
 
 function TeamPoints() {

@@ -19,7 +19,7 @@ app.get('/api/leaderboard', async (req, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:P15");
+    await sheet.loadCells("A1:W15");
 
     const rows = await sheet.getRows();
     const teams = rows
@@ -47,7 +47,7 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
     if(cached) return res.send(cached);
 
     const sheet = document.sheetsByIndex[0];
-    await sheet.loadCells("A1:P15");
+    await sheet.loadCells("A1:W15");
 
     const rows = await sheet.getRows();
     const team = rows
@@ -75,6 +75,15 @@ app.get('/api/team/:teamName', async (req: GetTeamDetails, res) => {
             womensMMBracket: team["Women's MM Bracket"] as string,
             mensMMBracket: team["Men's MM Bracket"] as string,
             dareToCare: team["Dare 2 Care Can DDD"] as string,
+
+            relayOne: team["Relay 1"] as string,
+            LSHeadsTails: team["LS Heads & Tails"] as string,
+            tugOfWar: team["Tug of War"] as string,
+            balloonToss: team["Faculty Balloon Toss"] as string,
+            relayTwo: team["Relay 2"] as string,
+            limbo: team["Limbo"] as string,
+            bucketBrigade: team["Bucket Brigade"] as string,
+
             total: team['Total:'] as string
         },
         calculatedAt: new Date().toISOString()
